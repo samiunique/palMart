@@ -12,25 +12,18 @@ const firebaseConfig = {
   // Initialize Firebase
   const app = firebase.initializeApp(firebaseConfig);
   const auth = app.auth();
-  const db = app.firestore();
   
-  // Sign Up function
-  function signUp() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+  function login() {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
   
-    auth.createUserWithEmailAndPassword(email, password)
+    auth.signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
+        // Signed in
         var user = userCredential.user;
-        user.sendEmailVerification().then(function() {
-          // Email sent
-          window.location.href = 'register.html'; // Redirect to the register page
-        }).catch(function(error) {
-          // An error happened
-          console.error('Error sending verification email:', error);
-        });
+        window.location.href = 'workspace.html'; // Redirect to the workspace page
       })
       .catch((error) => {
-        console.error('Error signing up:', error);
+        console.error('Error signing in:', error);
       });
   }

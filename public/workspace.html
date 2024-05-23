@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Palmart - Workspace</title>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+  <script src="workspace.js"></script>
+</head>
+<body>
+  <h1>Palmart - Workspace</h1>
+  <form>
+    <label for="image">Image:</label><br>
+    <input type="file" id="image" name="image"><br>
+    <label for="tag">Tag:</label><br>
+    <input type="text" id="tag" name="tag"><br>
+    <label for="price">Price:</label><br>
+    <input type="number" id="price" name="price"><br>
+    <label for="condition">Condition:</label><br>
+    <input type="text" id="condition" name="condition"><br>
+    <label for="location">Location:</label><br>
+    <input type="text" id="location" name="location"><br>
+    <label for="phone">Phone:</label><br>
+    <input type="text" id="phone" name="phone"><br>
+    <input type="button" value="Post" onclick="postItem()">
+  </form>
+</body>
+</html>
